@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+  body{
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color:hsl(221, 100%, 96%);
+  }
+
+
+
+  p{
+    font-size: 18px;
+  }
+
+
+  .paragraph{
+    max-width: 250px;
+    color: hsl(241, 100%, 89%);
+  }
+
+.result{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to top, rgba(255,0,0,0) 20%, rgb(76,34,202));
+}
+
+#deneme{
+  background: linear-gradient(to bottom, #6441fd, #332de9);
+}
+
+
+ul{
+  line-height: 70px;
+  width: 150%;
+}
+
+
+ul li{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button{
+  background: hsl(224, 30%, 27%);
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 30px;
+}
+
+button:hover{
+  background: linear-gradient(to bottom, #6441fd, #332de9) ;
+}
+
+
+.right-container{
+  width: 400px;
+  position: relative;
+  right: 30px;
+  padding: 4rem;
+  border-radius: 35px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color:  hsl(0, 0%, 100%);
+  box-shadow: 0px 10px 10px hsl(241, 100%, 89%);
+}
+
+@media (max-width:991px) {
+  .right-container{
+    box-shadow: none;
+  }
+
+  ul{
+    padding: 0px;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+
+
+
+  <main class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+
+    <div class="container d-flex flex-wrap justify-content-center box-shadow">
+      <div class="left-container z-1 rounded-5 d-flex flex-column justify-content-center w-auto">
+
+        <div id="deneme" class="d-flex  gap-4 flex-column align-items-center rounded-5  p-5">
+            <h4 class="fs-4 fw-light" style="color: hsl(241, 100%, 89%)">Your Result</h4>
+
+            <div class="result d-flex flex-column justify-content-center align-items-center">
+              <h1 class="text-white  result-title fw-bolder display-4">76</h1>
+              <p class="text-secondary">of 100</p>
+            </div>
+
+            <h2 class="text-white fw-bold">Great</h2>
+            <p class="paragraph  text-center ">You scored higher than 65% of the people who have taken these tests.</p>
+        </div>
+
+      </div>
+
+      <div class="right-container d-flex">
+
+        <div class="d-flex flex-column justify-content-between">
+          <h3 class="fw-bold">Summary</h3>
+          <ul style="list-style: none;" class="de">
+            <li><span class="text-danger"><img src="./assets/images/icon-reaction.svg"/> Reaction</span>  <span > <b>80</b> / 100</span> </li>
+            <li><span class="text-warning"><img src="./assets/images/icon-memory.svg"/> Memory</span>   <span > <b>92</b> / 100</span> </li>
+            <li><span class="text-success"><img src="./assets/images/icon-verbal.svg"/> Verbal</span>   <span > <b>61</b> / 100 </span></li>
+            <li><span class="text-primary"><img src="./assets/images/icon-visual.svg"/>Visual</span>   <span > <b>72</b> / 100 </span> </li>
+          </ul>
+          <button> Continue </button>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </main>
+
+</body>
+</html>
