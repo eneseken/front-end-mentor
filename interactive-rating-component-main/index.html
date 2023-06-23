@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+    body{
+      font-family: 'Overpass', sans-serif;
+    }
+    main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100svh;
+      background-color: hsl(216, 12%, 8%);
+    }
+    .container{
+      background: rgb(42,42,42);
+      width: 500px;
+      background: linear-gradient(0deg, hsl(212, 19%, 15%) 0%, hsl(213, 19%, 18%) 100%);
+    }
+
+    ul li button{
+      border-radius: 50%;
+      background-color: hsla(216, 12%, 8%, 0.418);
+      width: 60px;
+      height: 60px;
+      justify-content: center;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      transition: .3s all;
+      border: none;
+      color: hsl(216, 12%, 54%);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+
+    ul li .point-btn:hover{
+      background-color: hsl(217, 12%, 63%);
+      color: white;
+    }
+
+    ul li .point-btn:focus{
+      
+      background: hsl(25, 97%, 53%);
+      color: white;
+    }
+
+
+    .star-icon{
+      background: hsla(216, 12%, 33%, 0.301);
+      margin-bottom: 20px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .submit-button{
+      background: hsl(25, 97%, 53%);
+      border: none;
+      padding: 15px;
+      letter-spacing: 2px;
+      font-size: 18px;
+    }
+
+    a{
+      color: white;
+    }
+
+    .submit-button:hover{
+      background-color: white;
+    }
+
+    .submit-button:hover a{
+      color: hsl(25, 97%, 53%);
+    }
+
+    .description{
+      color: hsl(217, 12%, 63%);
+    }
+
+    #d{
+      height: 500px;
+      border: none;
+      background: rgb(42,42,42);
+      background: linear-gradient(0deg, hsl(212, 19%, 15%) 0%, hsl(213, 19%, 18%) 100%);
+      width: 500px;
+    }
+
+    #selected-text{
+      background-color: hsla(217, 11%, 23%, 0.418);
+      color: hsl(25, 97%, 53%);
+      width: 200px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+
+
+  <main>
+
+    <div class="container d-flex flex-column rounded-5 p-5 gap-3 justify-content-start align-items-sm-start">
+
+        <img class="star-icon p-3 rounded-5 align-items-start" src="./images/icon-star.svg" alt="icon-star">
+
+      <div class="d-flex flex-column gap-2">
+        <h1 class="fw-bolder text-white">How did we do?</h1>
+        <p class="description">Please let us know how we did with your support request. All feedback is appreciated 
+          to help us improve our offering!
+        </p>
+      </div>
+
+      <ul class="d-flex flex-wrap flex-row gap-3 list-unstyled w-100 justify-content-center align-items-center">
+        <li><button class="point-btn" onclick="selectRating(1)">1</button></li>
+        <li><button class="point-btn" onclick="selectRating(2)">2</button></li>
+        <li><button class="point-btn" onclick="selectRating(3)">3</button></li>
+        <li><button class="point-btn" onclick="selectRating(4)">4</button></li>
+        <li><button class="point-btn" onclick="selectRating(5)">5</button></li>
+        
+      </ul>
+
+      <button onclick="d.showModal()" class="submit-button  text-uppercase  rounded-5 d-flex w-100"><a href="#" class="text-decoration-none w-100">Submit</a></button>
+    </div>
+
+    <dialog id="d" class="rounded-5">
+
+      <div class="mt-5 d-flex justify-content-center gap-4 align-items-center flex-column text-center">
+
+        <img class="w-50" src="/images/illustration-thank-you.svg" alt="thank">
+
+        <div id="selected-text" class="p-2 rounded-5">
+          You selected <span id="selected-rating"></span> out of 5
+        </div>
+
+        <div class="text-white">
+          <h1 class="fw-bold">Thank you!</h1>
+          <p class="text-secondary">We appreciate you taking the time to give a rating. If you ever need more support, 
+            don’t hesitate to get in touch!</p>
+        </div>
+
+      </div>
+
+    </dialog>
+
+  </main>
+  
+  <script>
+    let selectedRating = 0;
+  
+    function selectRating(rating) {
+      selectedRating = rating;
+      document.getElementById('selected-rating').textContent = selectedRating;
+    }
+  </script>
+</body>
+</html>
