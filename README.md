@@ -9,4 +9,6 @@
 <a href="https://front-end-c-5.netlify.app/">front-end-c-5</a>
 <hr/>
 <a href="https://front-end-c-6.netlify.app/">front-end-c-6</a>
+<hr/>
+<a href="https://front-end-c-7.netlify.app/">front-end-c-7</a>
 
