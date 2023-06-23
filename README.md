@@ -5,3 +5,8 @@
 <a href="https://front-end-c-3.netlify.app/">front-end-c-3</a>
 <hr/>
 <a href="https://front-end-c-4.netlify.app/">front-end-c-4</a>
+<hr/>
+<a href="https://front-end-c-5.netlify.app/">front-end-c-5</a>
+<hr/>
+<a href="https://front-end-c-6.netlify.app/">front-end-c-6</a>
+
