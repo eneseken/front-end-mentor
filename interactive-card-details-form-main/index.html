@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+    body{
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100svh;
+    }
+
+
+
+    .card-container{
+      background-image: url(./images/bg-main-desktop.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100svh;
+      width: 600px;
+    }
+
+
+    .cards{
+      position: relative;
+      margin-left: 350px;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+
+    .card{
+      border: none;
+      width: 500px;
+      margin-left: 100px;
+    }
+    .front-card{
+      background: url(./images/bg-card-front.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 500px;
+      height: 250px;
+      position: relative;
+      right: 80px;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    .back-card{
+      background: url(./images/bg-card-back.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 500px;
+      height: 250px;
+    }
+
+    .card-logo{
+      width: 80px;
+      height: 50px;
+    }
+
+
+    .card-number{
+      letter-spacing: 4px;
+    }
+
+    .cvv{
+      position: relative;
+      margin-right: 80px;
+      margin-top: 10px;
+    }
+
+    .confirm-btn{
+      background-color: hsl(278, 68%, 11%);
+      border: none;
+    }
+
+    .card-person-info{
+      width: 380px;
+    }
+
+    ::placeholder {
+  color: red; /* İstediğiniz rengi burada belirleyebilirsiniz */
+}
+
+label{
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+ @media (max-width: 1425px) {
+  main{
+    flex-wrap: wrap;
+  }
+  .card{
+    margin-left: 0px;
+  }
+
+  
+
+  .card-container{
+    background-image: url(./images/bg-main-mobile.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    height: 100%;
+  }
+
+  .cards{
+    flex-direction: column-reverse;
+    gap: 0rem;
+    margin-top: 100px;
+    margin-left: 50px;
+  }
+
+  .front-card{
+    bottom: 110px;
+    right: 30px;
+  }
+ }
+
+ @media (max-width: 600px) {
+    main{
+      min-width: 525px;
+    }
+
+    .cards{
+      top: 120px;
+      z-index: 1;
+    }
+    .back-card{
+      margin-left: 20px;
+    }
+ }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+      <div class="card-container d-flex flex-column justify-content-center">
+      <div class="cards d-flex justify-content-center">
+
+        <div class="front-card text-white d-flex flex-column gap-5 p-5 ">
+        <img class="card-logo" src="./images/card-logo.svg" alt="card-logo">
+
+          <div class="card-details d-flex flex-column ">
+            <p class="card-number  text-start fs-3">0000 0000 0000 0000</p>
+            
+            <div class="card-person-info d-flex justify-content-between ">
+              <p class="cardholder-name text-uppercase">John Doe</p>
+            <p class="exp-date">MM/YY</p>
+            </div>
+            
+          </div>
+
+        </div>
+
+        <div class="back-card d-flex justify-content-end align-items-center">
+          <p class="cvv text-white">000</p>
+        </div>
+
+      </div>
+    </div>
+  
+    <div class="container  d-flex justify-content-center align-items-end">
+      <div class="row w-100 justify-content-center">
+        <div class="col-md-6">
+          <div class="card d-flex p-5">
+            <div class="card-body ">
+                <div class="mb-4">
+                  <label for="cardholder-name" class="form-label">CARDHOLDER NAME</label>
+                  <input type="text"required class="placeholder-wave form-control p-3" placeholder="e.g. JOHN DOE" id="cardholder-name" maxlength="15">
+                </div>
+                <div class="mb-4">
+                  <label for="card-number" class="form-label">CARD NUMBER</label>
+                  <input type="text" required class="placeholder-wave form-control p-3" placeholder="e.g. 1234 5678 9123 0000" id="card-number" maxlength="19">
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label for="exp-date" class="form-label">EXP. DATE (MM/YY)</label>
+                    <input type="text" required class="placeholder-wave form-control p-3" placeholder="MM/YY" id="exp-date"  maxlength="5">
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label for="cvv" class="form-label">CVC</label>
+                    <input type="text" required class="placeholder-wave form-control p-3" placeholder="e.g. 123" id="cvv" maxlength="3">
+                  </div>
+                </div>
+                <button  onclick="d.showModal()" type="submit" class="confirm-btn rounded-3 text-white w-100 p-3">Confirm</button>
+            </div>
+            <dialog style="width: 500px;" id="d" class="border-0 rounded-2 ">
+
+              <div class="text-center d-flex flex-column gap-3 py-5  justify-content-center align-items-center">
+        
+                <img class="w-25 mb-4" src="./images/icon-complete.svg" alt="thank">
+        
+                  <h1>THANK YOU!</h1>
+                  <p>We've added your card details</p>
+                  <button onclick="d.close()" class="confirm-btn w-75 p-3 text-white rounded-3">Continue</button>
+
+              </div>
+        
+            </dialog>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+  </main>
+  
+  
+  
+  <div class="attribution">
+    <span class="text-white">Web developer, portfolio, web design, web applications, web projects, website, mobile responsive web, SEO, digital marketing</span>
+    Challenge by <a href="https://www.frontendmentor.io/profile/eneseken" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://eneseken.com">Enes Eken</a>.
+    <span class="text-white">Web geliştirici, portföy, portfolyo, web tasarımı, web uygulamaları, web projeleri, internet sitesi, mobil uyumlu web, SEO, dijital pazarlama</span>
+  </div>
+
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const cardNumberInput = document.getElementById('card-number');
+      const cardholderNameInput = document.getElementById('cardholder-name');
+      const expDateInput = document.getElementById('exp-date');
+      const cvvInput = document.getElementById('cvv');
+
+      cardNumberInput.addEventListener('input', function() {
+        let cardNumber = cardNumberInput.value.replace(/\s/g, '');
+        cardNumber = cardNumber.replace(/[^\d]/g, '');
+        const formattedCardNumber = formatCardNumber(cardNumber);
+        cardNumberInput.value = formattedCardNumber;
+        updateCardNumber(formattedCardNumber);
+      });
+
+      cardholderNameInput.addEventListener('input', function() {
+        const cardholderName = cardholderNameInput.value.toUpperCase();
+        updateCardholderName(cardholderName);
+      });
+
+      expDateInput.addEventListener('input', function() {
+        const expDate = expDateInput.value;
+        updateExpDate(expDate);
+      });
+
+      cvvInput.addEventListener('input', function() {
+        const cvv = cvvInput.value;
+        updateCVV(cvv);
+      });
+
+      function formatCardNumber(cardNumber) {
+        const formatted = [];
+        for (let i = 0; i < cardNumber.length; i++) {
+          if (i > 0 && i % 4 === 0) {
+            formatted.push(' ');
+          }
+          formatted.push(cardNumber[i]);
+        }
+        return formatted.join('');
+      }
+
+      function updateCardNumber(cardNumber) {
+        const cardNumberElement = document.querySelector('.card-number');
+        cardNumberElement.textContent = cardNumber;
+      }
+
+      function updateCardholderName(cardholderName) {
+        const cardholderNameElement = document.querySelector('.cardholder-name');
+        cardholderNameElement.textContent = cardholderName;
+      }
+
+      function updateExpDate(expDate) {
+        const expDateElement = document.querySelector('.exp-date');
+        expDateElement.textContent = expDate;
+      }
+
+      function updateCVV(cvv) {
+        const cvvElement = document.querySelector('.cvv');
+        cvvElement.textContent = cvv;
+      }
+    });
+  </script>
+</body>
+</html>
