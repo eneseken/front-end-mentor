@@ -1,0 +1,312 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: hsl(218, 28%, 13%);
+}
+
+main{
+    width: 100%;
+    height: 100svh;
+
+}
+
+.headerSection{
+    height: 150px;
+    background-color: #1c2230;
+}
+.headerSection header{
+    font-family: 'Raleway', sans-serif;
+    width: 75%;
+}
+.headerSection ul li a{
+    transition: .3s all;
+}
+.headerSection ul li a:hover{
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+ul{
+    gap: 3rem;
+}
+ul li{
+    font-size: 18px;
+}
+
+.heroSection{
+    font-family: 'Raleway', sans-serif;
+    background-color: #1c2230;
+}
+.heroSection h1{
+    font-weight: 700;
+}
+
+
+
+.heroPar{
+    width: 560px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+}
+.heroBtn{
+    width: 280px;
+    border-radius: 50px;
+    outline: 0;
+    border: none;
+    font-weight: 700;
+    color: white;
+    background-color: hsl(198, 60%, 50%);
+    transition: .3s all;
+}
+.heroBtn:hover{
+    background-color: hsl(198, 92%, 61%);
+}
+
+.curvyImg{
+    background-color: #1c2230;
+    top: 800px;
+}
+
+.mainSection .mainHero{
+    width: 1100px;
+    position: relative;
+    top: 150px;
+}
+.topSec p{
+    text-align: center;
+    width: 75%;
+}
+ .bottomSec p{
+    text-align: center;
+    width: 75%;
+}
+
+.mainSection img{
+    width: auto;
+    height: auto;
+}
+
+.productiveSection h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.productiveSection{
+    position: relative;
+    top: 300px;
+}
+
+.productiveSection p{
+    font-size: 20px;
+    max-width: 600px;
+}
+
+.productiveSection a{
+    font-size: 20px;
+    color: hsl(176, 68%, 64%);
+    border-bottom: 1px solid hsl(176, 68%, 64%);
+}
+
+
+.quoteSection{
+    position: relative;
+    top: 500px; 
+}
+#quoteIcon{
+    position: absolute;
+    left: 320px;
+    bottom: 235px;
+    z-index: 1;
+}
+
+.quoteCard{
+    background-color: hsl(219, 30%, 18%);
+    width: 450px;
+    height: 250px;
+    box-shadow: 10px 10px 0px hsla(219, 30%, 18%, 0.486);
+}
+
+.quoteCard p{
+    max-width: 400px;
+    font-size: 20px;
+}
+
+.quoteCard img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.contactSection{
+    position: relative;
+    top: 850px;
+}
+
+.contactBox{
+    width: 1100px;
+    height: 300px;
+    background-color: #1c2230;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.192);
+}
+.contactBox p{
+    font-size: 20px;
+}
+.contactBox input{
+    height: 60px;
+    width: 500px;
+    outline: 0;
+}
+.contactBox button{
+    height: 60px;
+    width: 200px;
+    outline: 0;
+    border: 0;
+    color: white;
+    background-color: hsl(198, 60%, 50%);
+}
+
+.footerMain{
+    position: relative;
+    top: 700px;    
+    height: 650px;
+    background-color: hsl(216, 53%, 9%);
+}
+.firstCol{
+    width: 500px;
+    height: 200px;
+}
+.secondCol, .thirdCol, .fourthCol{
+    height: 200px;
+    width: 200px;
+}
+.bottomCol p{
+    font-size: 20px;
+    max-width: 400px;
+}
+
+a{
+    text-decoration: none; 
+    color: rgb(211, 211, 211);
+}
+
+
+.mobileCurvy{
+    display: none;
+}
+
+
+.productiveSection .responsiveProductive{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.responsiveProductive a:hover{
+    color: white;
+    border-bottom-color: white;
+}
+/*Responsive*/
+
+@media (max-width: 630px)  {
+
+
+    .headerSection header{
+        width: 100%;
+    }
+    #logo{
+        width: 100px;
+    }
+    ul{
+        gap: 1.2rem;
+    }
+    .heroTitle{
+        font-size: 20px;
+    }
+    .heroPar{
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .heroSection img{
+        width: 250px;
+    }
+
+    .curvyImg{
+        display: none;
+    }
+
+    .productiveSection img{
+        width: 300px;
+    }
+
+    .productiveSection .arrowIcon{
+        width: 20px;
+    }
+
+    .contactBox{
+        width: 350px;
+        height: 500px;
+        padding: 15px;
+    }
+    .contactBox h1{
+        text-align: center;
+    }
+    .contactBox p{
+        font-size: 16px;
+        max-width: 100%;
+    }
+    .contactBox input{
+        height: 25px;
+        width: 300px;
+    }
+    .topSec, .bottomSec p{
+        text-align: left;
+        width: 100%;
+        font-size: 14px;       
+    }
+    .topSec, .bottomSec{
+        gap: 1.5rem;
+    }
+
+    .productiveSection .responsiveProductive{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .responsiveProductive p{
+        text-align: center;
+        font-size: 14px;
+        max-width: 350px;
+    }
+    .quoteCard{
+        width: 300px;
+        padding: 3rem;
+    }
+    .quoteCard p{
+        font-size: 14px;
+    }
+    #quoteIcon{
+        display: none;
+    }
+    .contactSection{
+        top: 650px;
+    }
+    .mobileCurvy{
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 500px;
+        width: 375px;
+        height: 200px;
+        background-color: #1c2230;
+    }
+    .footerMain{
+        height: 100%;
+    }
+}
+
