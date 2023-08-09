@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | eneseken.com </title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+  <main>
+
+    <section class="container  d-flex flex-column justify-content-center align-items-center">
+
+        <header class="headerSec d-flex mt-5 pb-5  justify-content-between w-100 align-items-center">
+
+          <div class="leftNav d-flex gap-5 justify-content-between align-items-center">
+
+            <div class="d-flex justify-content-center gap-3 m-0 align-items-center ">
+              <button onclick="menuOpen()" class="menuBtn"><img class="menuIcon" src="./images/icon-menu.svg" alt="icon"></button> 
+              <img src="./images/logo.svg" alt="logo">
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center ">
+              <ul class="navContent  m-0  list-unstyled gap-4 justify-content-center align-items-center">
+                <li> <a href="#">Collections</a></li>
+                <li><a href="#">Men</a></li>
+                <li> <a href="#">Women</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="rightNav d-flex flex-column justify-content-center align-items-center">
+
+          <div class="d-flex gap-4 justify-content-center align-items-center"> 
+
+              <div id="amountOfProduct" class="amountAdd  rounded-5 text-white text-center  align-items-center justify-content-center z-3">0</div>
+            
+            <div class="imageBox">
+              <a href="#" onclick="showBasket()"><img src="./images/icon-cart.svg" class="z-1" alt="cart"></a> 
+            </div>
+
+            <div class="avatarImgBox">
+              <img class="avatarImg" src="./images/image-avatar.png" alt="avatar">
+            </div>
+
+          </div>
+
+        
+
+              <div id="basketDetails" class="basketDetails position-absolute p-4 justify-content-between  flex-column rounded-3 ">
+              
+                <h2 class="fw-bold fs-5">Cart</h2>
+              
+                <div class="basketContentBox d-flex  h-100  flex-column  justify-content-between align-items-center">
+              
+                  <div class="d-flex  pt-3 justify-content-center gap-3 align-items-center">
+      
+                  <div class="d-flex">
+                      <img class="productImgBasket rounded-3" src="./images/image-product-1-thumbnail.jpg" alt="product">
+                      </div>
+                      
+                      <div class="d-flex flex-column">
+                        <span class="basketProductTitle">Fall Limited Edition Sneakers</span>
+                        <span class="totalPrice">$125.00 x <b id="outputAmount" class="text-secondary fw-light"></b> <b id="totalProductPrice" class="text-dark">  </b></span>
+                      </div>
+      
+                      <button id="deleteBtn" onclick="deleteBasket()" class="deleteBtn">
+                        <img src="./images/icon-delete.svg" alt="delete">
+                      </button>
+      
+                  
+      
+                  </div>
+      
+                  <div class="d-flex mt-3 w-100 justify-content-center align-items-center">
+                    <button class="checkoutBtn d-flex justify-content-center w-100 align-items-center rounded-3"> Checkout </button> 
+                  </div>
+      
+                </div>
+
+              </div>
+
+              <div id="basketDetailsEmpty" class="basketDetails position-absolute p-4 justify-content-center  flex-column rounded-3 ">
+                <h2 class="fw-bold fs-5">Cart</h2>
+              
+                <div class="basketContentBox d-flex  h-100   flex-column  justify-content-center align-items-center">
+              
+                  <span class="fw-bolder text-secondary">Your cart is empty.</span>
+      
+                </div>
+      
+              </div>
+              
+              
+            
+          </div>
+
+
+            
+
+        </header>
+
+        <!-- <div id="responsiveMenuBox" class="responsiveMenuBox   ">
+          <div class="d-flex  flex-column justify-content-start align-items-center ">
+            <ul class="responsiveNavContent   m-0  list-unstyled gap-4 justify-content-center align-items-center">
+              <img src="./images/logo.svg" class="mt-5 mb-5" alt="logo">
+              <li> <a class="fs-4" href="#">Collections</a></li>
+              <li><a class="fs-4" href="#">Men</a></li>
+              <li> <a class=" fs-4"  href="#">Women</a></li>
+              <li><a class=" fs-4" href="#">About</a></li>
+              <li><a class="fs-4" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div> -->
+        
+
+        <section class="introSec w-100 mt-5 d-flex  flex-wrap justify-content-evenly align-items-center">
+
+          <div class="imageBox d-flex flex-column gap-3 justify-content-start align-items-start">
+            
+            <div class="mainImg w-100">
+              <img id="mainImage" src="./images/image-product-1.jpg" alt="thumb">
+            </div>
+
+            <div class="sideImg  w-100">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="1" onclick="changeMainImage('./images/image-product-1.jpg')">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="2" onclick="changeMainImage('./images/image-product-2.jpg')">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="3" onclick="changeMainImage('./images/image-product-3.jpg')">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="4" onclick="changeMainImage('./images/image-product-4.jpg')">
+
+            </div>
+
+          </div>
+
+          <div class="textSec  d-flex flex-column align-items-start justify-content-center">
+
+            <div class="mainTextSec d-flex flex-column" >
+              <div class="d-flex flex-column gap-3">
+                <span class="titleText fw-bold">SNAKER COMPANY</span>
+                <h1 class="fw-bolder">Fall Limited Edition <br> Sneakers</h1>
+              </div>
+              <div class="bttomTextSec d-flex flex-column">
+                <p class="mt-3 mb-4">
+                  These low-profile sneakers are your perfect casual wear companion. Featuring a 
+                durable rubber outer sole, they’ll withstand everything the weather can offer.
+                </p>
+
+                <div class="priceInfo d-flex  gap-2  align-items-start">
+                  <div class="topPlace d-flex justify-content-start gap-3 align-items-start">
+                    <h2 class="m-0"><b>$125.00</b></h1>
+                      <span class="discountBox  p-1 rounded-2 fw-bold ">50%</span>
+                  </div>
+                  <div class="bottomPlace ">
+                    <span class="discountInfo"> <strike> $250.00 </strike> </span>
+
+                  </div>
+              
+            </div>
+              </div>
+
+            </div>
+
+
+
+            <div class="d-flex flex-wrap  mt-5 gap-3 justify-content-center align-items-center">
+              <div class="d-flex justify-content-center align-items-center">
+                <div  class="pieceBtn  rounded-3  p-3 d-flex  justify-content-between align-items-center">
+
+                  <button  onclick="decreaseAmount()" ><img  src="./images/icon-minus.svg" alt="icon"/></button>  
+                  <span id="amount">0</span> 
+                  <button  onclick="increaseAmount()"><img src="./images/icon-plus.svg" alt="icon"/></button> 
+
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center align-items-center">
+                
+                <button onclick="addToCart()" class="addBtn rounded-3 text-white p-3 d-flex justify-content-center align-items-center gap-3"><i class="fa-thin fa-cart-shopping fa-solid " style="color: #ffffff;"></i> Add to cart</button>
+              </div>
+            </div>
+          
+          </div>
+
+
+
+
+          </div>
+
+        </section>
+
+
+    </section>
+
+
+  </main>
+
+  <script>
+    let productAmount = document.getElementById('amountOfProduct');
+    let emptyBasket = document.getElementById('basketDetailsEmpty');
+    let amountOutput = document.getElementById('outputAmount').innerText = productAmount.innerText;
+    let totalPrice = document.getElementById('totalProductPrice').innerText = "$" + 125 * productAmount.innerText;
+    
+
+
+    function changeMainImage(newImageSrc) {
+            const mainImage = document.getElementById("mainImage");
+            mainImage.src = newImageSrc;
+        }
+
+    function showBasket() {
+
+    if(productAmount.innerText == 0){
+      emptyBasket.style.display = "flex";
+      }
+      else{
+      document.getElementById('basketDetails').style.display = "flex";
+      }
+    }
+
+    function deleteBasket(){
+      emptyBasket.style.display = "flex";
+      productAmount.innerText = 0;
+      productAmount.style.display = "none";
+    }
+
+   
+
+
+    let currentAmount = 0;
+        const amountSpan = document.getElementById("amount");
+
+        function decreaseAmount() {
+            if (currentAmount > 0) {
+                currentAmount--;
+                amountSpan.textContent = currentAmount;
+            }
+        }
+
+        function increaseAmount() {
+            currentAmount++;
+            amountSpan.textContent = currentAmount;
+        }
+
+    
+
+        function addToCart(){
+          if(currentAmount > 0){
+            productAmount.innerText = currentAmount;
+            emptyBasket.style.display = "none";
+            let amountOutput = document.getElementById('outputAmount').innerText = productAmount.innerText;
+            let totalPrice = document.getElementById('totalProductPrice').innerText = "$" + 125 * productAmount.innerText;
+          }
+
+        }
+
+
+  </script>
+</body>
+</html>
+
+
+
