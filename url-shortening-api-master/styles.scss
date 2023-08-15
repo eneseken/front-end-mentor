@@ -1,0 +1,361 @@
+
+$cyan: hsl(180, 66%, 49%);
+$red:  hsl(0, 87%, 67%);
+$gray: hsl(0, 0%, 75%);
+$grayish-violet: hsl(257, 7%, 63%);
+$dark-blue: hsl(255, 11%, 22%);
+$very-dark-violet: hsl(260, 8%, 14%);
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+@import './breakpoints';
+
+@mixin flexCenter($direction, $placement, $align){
+    display: flex;
+    justify-content: $placement;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin buttonSet($backgroundColor){
+    background-color: $backgroundColor;
+    border: 0;
+    outline: 0;
+    border-radius: 30px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+
+    main{
+        width: 100%;
+        min-height: 100svh;
+        @include flexCenter(column, center, center);
+
+
+        header{
+            @include flexCenter(row, space-between,center);
+           
+            height: 80px;   
+            margin-top: 1.5rem;
+            width: 100%;
+
+            .leftNav{
+                @include flexCenter(row, center, center);
+                gap: 20px;
+               
+                img{
+                    @include sm{
+                        width: 100px;
+                        height: 30px;
+                    }
+                }
+
+                ul{
+                    @include flexCenter(row, center, center);
+                    list-style: none;
+                    margin: 0;
+                    @include sm{
+                        padding: 0px;
+                        font-size: 14px;
+                    }
+                    li {
+                        margin-right: 20px;
+                    }
+                    
+                    a{
+                        text-decoration: none;
+                        color: $dark-blue;
+                    }
+                }
+         
+            }
+
+            .rightNav{
+                @include flexCenter(row, center, center);
+                gap: 1.5rem;
+                @include sm{
+                    display: none;
+                }
+
+                button:first-child{
+                    @include buttonSet(transparent);
+
+                }
+                button:last-child{
+                    color: white;
+                    @include buttonSet($cyan);
+                    padding: 10px;
+                    width: 100px;    
+                }
+            }
+        }
+        
+        .introMain{
+            @include flexCenter(row, center, center);
+            flex-wrap: wrap-reverse;
+            margin-top: 20px;
+            .leftSec{
+                @include flexCenter(column, center, start);
+            
+                h1{
+                    font-size: 70px;
+                    font-weight: 700;
+                    color: $dark-blue;
+                    letter-spacing: -2px;
+                     @include sm{
+                        font-size: 50px;
+                     }
+                }
+
+                p{
+                    max-width: 450px;
+                    color: $grayish-violet;
+                    font-size: 18px;
+                }
+
+                button{
+                    @include buttonSet($cyan);
+                    padding: 10px;
+                    color: white;
+                    width: 150px;
+                    margin-top: 20px;
+                }
+
+            
+            }
+
+            .rightSec{
+                @include sm{
+                    display: none;
+                }
+                position: relative;
+                left: 200px;
+                top: 0px;
+                img{
+                    width: 800px;
+                    height: 600px;
+                    position: relative;
+                }
+            
+            }
+
+        }
+
+        .heroSection{
+            @include flexCenter(row, center, center);
+            margin-top: 100px;  
+            position: relative;
+            top: 100px;
+            @include sm{
+                top: 0;
+                margin-top: 50px;
+            }
+
+            div{
+                @include flexCenter(row, center, center);
+                background-image: url(./images/bg-shorten-desktop.svg);
+                width: 100%;
+                height: 200px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: #3a3053;
+                border-radius: 10px;
+                gap: 30px;
+                z-index: 3;
+            flex-wrap: wrap;
+
+
+                input{
+                    width: 800px;
+                    height: 60px;
+                    padding: 20px;
+                    border-radius: 10px;
+                    @include sm{
+                        width: 300px;
+                    }
+                }
+
+                button{
+                    @include buttonSet($cyan);
+                    height: 60px;
+                    padding: 10px;
+                    width: 170px;
+                    border-radius: 10px;
+                    color: white;
+                }
+
+            }
+
+            
+        }
+    
+        .lastSec{
+            @include flexCenter(column, center, center);
+            background-color: #f0f1f6;
+            width: 100%;
+            height: 900px;
+            padding: 50px;  
+            gap: 50px;
+            @include sm{
+                height: 100%;
+                text-align: center;
+            }
+            .topSec{
+                @include flexCenter(column, center,center);
+                h1{
+                    color: $dark-blue;
+                    font-size: 40px;
+                    font-weight: 700;
+                }
+                p{
+                    max-width: 600px;
+                    text-align: center;
+                    font-size: 20px;
+                    color: $grayish-violet;
+                }
+            }
+
+            .bottomSec{
+                @include flexCenter(row,space-around,center);
+                flex-wrap: wrap;
+                gap: 40px;
+                margin-top: 40px;
+                
+                .line{
+                    border: 5px solid $cyan;
+                    width: 50%;
+                    z-index: 1;
+                    position: relative;
+                    bottom: 150px;
+                }
+
+                
+
+                .box{
+                    background-color: ghostwhite;
+                    height: 250px;
+                    width: 350px;
+                    border-radius: 10px;
+                    padding: 20px;
+                    z-index: 3;
+
+        
+                    .imgBox{
+                        @include flexCenter(row,center,center);
+                        @include sm{
+                            bottom: 27px;
+                            left: 111px;
+                        }
+                        padding: 15px;
+                        background-color: #4b3f63;
+                        border-radius: 50%;
+                        width: 70px;
+                        height: 70px;
+                        position: relative;
+                        bottom: 50px;
+                        left: 20px;
+
+                        img{
+                            object-fit: contain;
+                        }
+                    }
+
+                    p{
+                        max-width: 310px;
+                        color: $grayish-violet;
+                    }
+
+                    h4{
+                        font-weight: 700;
+                        font-size: 22px;
+                        color: hsl(255, 11%, 22%);
+                    }
+                
+                }
+            }
+        }
+
+        .boostSec{
+            @include flexCenter(row,center,center);
+            background-image: url(./images/bg-boost-desktop.svg);
+            background-color: #3a3053;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 350px;
+            color: white;
+
+            div{
+            @include flexCenter(column, center,center);
+            gap: 20px;
+            
+                h1{
+                    font-style: 40px;
+                    font-weight: 700;
+                }
+    
+                button{
+                    @include buttonSet($cyan);
+                    padding: 10px;
+                    width: 150px;
+                    color: white;
+                }
+            }
+
+
+            
+        }
+
+        .footerSec{
+            width: 100%;
+            height: 300px;
+            background-color: $very-dark-violet;
+            @include flexCenter(row, center, center);
+            color: white;
+            @include sm{
+                height: 100%;
+            }
+
+            footer{
+                @include flexCenter(row, center, center);
+                    width: 50%;
+                    @include sm{
+                        flex-wrap: wrap;
+                        width: 50%;
+                        gap: 40px;  
+                        margin-top: 50px;
+                    }
+
+
+                .footerMain{
+                    @include flexCenter(row, space-evenly, center);
+                    width: 100%;
+                    @include sm{
+                        gap: 41px;
+                        flex-wrap: wrap;
+                    }
+                    ul{
+                        @include flexCenter(column, start, start);
+                        gap: 5px;
+
+                        h4{
+                            margin-bottom: 10px;
+                        }
+                        li{
+                        list-style: none;
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: $gray;
+                    }
+                    }
+                }
+            }
+        }
+    }
+}

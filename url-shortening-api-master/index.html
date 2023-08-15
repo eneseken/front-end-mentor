@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | eneseken.com</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <main>
+
+    <section class="container h-100">
+
+    <header>
+      <div class="leftNav">
+        <img src="./images/logo.svg" alt="logo">
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div class="rightNav">
+        <button>Login</button>
+        <button>Sign Up</button>
+      </div>
+    </header>
+
+    <section class="introMain">
+      <div class="leftSec">
+        <h1>More than just <br> shorter links</h1>
+        <p>Build your brand's recognition and get detailed insights on how your links are performing.</p>
+        <button class="callToActBtn">Get Started</button>
+      </div>
+
+      <div class="rightSec">
+        <img src="./images/illustration-working.svg" alt="image">
+      </div>
+    </section>
+
+    <section class="heroSection">
+      <div>
+        <input id="linkInput" type="text" placeholder="Shorten a link here...">
+        <button onclick='shortenLink()' >Shorten It!</button>
+        <button  class="text-white m-0"><a id="shortenedLink" href="" target="_blank" class="text-decoration-none text-white">Waiting...</a></button>
+      </div>
+    </section>
+
+  </section>
+
+    <section class="lastSec "> 
+      <div class="topSec">
+        <h1>Advanced Statistics</h1>
+        <p>Track how your links are performing across the web with our 
+          advanced statistics dashboard.</p>
+      </div>
+
+      <div class="bottomSec">
+
+        <div class="box">
+          <div class="imgBox"><img src="./images/icon-brand-recognition.svg" alt="icon"></div>
+          <h4>Bran Recognition</h4>
+          <p>
+            Boost your brand recognition with each click. Generic links don’t 
+            mean a thing. Branded links help instil confidence in your content.</p>
+        </div>
+        <div class="box">
+          <div class="imgBox"><img src="./images/icon-detailed-records.svg" alt="icon"></div>
+
+          <h4>Detailed Records</h4>
+          <p>
+            Gain insights into who is clicking your links. Knowing when and where 
+  people engage with your content helps inform better decisions.</p>
+        </div>
+        <div class="box">
+          <div class="imgBox"><img src="./images/icon-fully-customizable.svg" alt="icon"></div>
+
+          <h4>Fully Customizable</h4>
+          <p>
+            Improve brand awareness and content discoverability through customizable 
+  links, supercharging audience engagement.</p>
+        </div>
+
+        <div class="line">
+        </div>
+
+      </div>
+      
+    </section>
+
+    
+    <section class="boostSec">
+      <div>
+        <h1>Boost your links today</h1>
+        <button>Get Started</button>
+      </div>
+    </section>
+
+
+    <section class="footerSec"> 
+
+      <footer>
+        <div><img src="./images/logo.svg" alt="logo"></div>
+        <div class="footerMain">
+          <ul>
+            <h4>Features</h4>
+            <li>Link Shortening</li>
+            <li>Branded Links</li>
+            <li>Analytics</li>
+          </ul>
+          <ul>
+            <h4>Resources</h4>
+            <li>Blog</li>
+            <li>Developers</li>
+            <li>Support</li>
+          </ul>
+          <ul>
+            <h4>Company</h4>
+            <li>Shortening</li>
+            <li>Careers</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"> </script>
+  <script>
+    function shortenLink() {
+            var linkInput = document.getElementById("linkInput").value;
+            var apiURL = "https://api.shrtco.de/v2/shorten?url=" + encodeURIComponent(linkInput);
+
+            fetch(apiURL)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        var shortenedLink = data.result.short_link;
+                        document.getElementById("shortenedLink").innerHTML = shortenedLink;
+                        document.getElementById("shortenedLink").href = "https://" + shortenedLink;
+                    } else {
+                        document.getElementById("shortenedLink").innerHTML = "Error shortening the link.";
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("shortenedLink").innerHTML = "An error occurred.";
+                });
+        }
+  </script>
+</body>
+</html>
