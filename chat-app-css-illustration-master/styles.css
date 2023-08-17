@@ -1,0 +1,347 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+body main {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  min-height: 100svh;
+}
+body main .firstDesignBox {
+  background: linear-gradient(to top, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+  width: 700px;
+  border-bottom-left-radius: -100%;
+  border-bottom-right-radius: 100%;
+  height: 900px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+@media (max-width: 960px) {
+  body main .firstDesignBox {
+    display: none;
+  }
+}
+body main .secondDesignBox {
+  background: rgba(128, 128, 128, 0.04);
+  width: 700px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: -100%;
+  height: 900px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+@media (max-width: 960px) {
+  body main .secondDesignBox {
+    display: none;
+  }
+}
+body main .mainSec {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  height: 800px;
+  width: 1000px;
+  z-index: 3;
+  flex-wrap: wrap;
+}
+@media (max-width: 480px) {
+  body main .mainSec {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 960px) {
+  body main .mainSec {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+body main .mainSec .telephoneMain {
+  background-color: white;
+  border-radius: 40px;
+  width: 350px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.075);
+  height: 750px;
+  padding: 20px;
+}
+body main .mainSec .telephoneMain .topSec {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  height: 100px;
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .rightSec {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .rightSec .arrow {
+  border: solid rgb(255, 255, 255);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-left: 20px;
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .rightSec .left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .rightSec .avatarBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .rightSec .avatarBox img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .rightSec .avatarBox .avatarInfoBox {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .rightSec .avatarBox .avatarInfoBox h4 {
+  font-size: 16px;
+  margin: 0px;
+  color: white;
+  font-weight: 500;
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .rightSec .avatarBox .avatarInfoBox span {
+  font-size: 12px;
+  margin-top: 2px;
+  color: hsl(270, 7%, 64%);
+}
+body main .mainSec .telephoneMain .topSec .mainTopSec .leftSec .threeDotIcon:after {
+  margin-right: 10px;
+  content: "⠇";
+  font-size: 20px;
+  color: white;
+}
+body main .mainSec .telephoneMain .topSec .whiteBox {
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 200px;
+  height: 30px;
+}
+body main .mainSec .telephoneMain .bottomSec {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  background-color: hsl(270, 20%, 96%);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 100%;
+  height: 650px;
+}
+body main .mainSec .telephoneMain .bottomSec .firstMessageBox {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+body main .mainSec .telephoneMain .bottomSec .firstMessageBox .messageBox {
+  background-color: hsla(206, 7%, 79%, 0.493);
+  padding: 10px;
+  color: hsl(276, 55%, 52%);
+  border-radius: 15px;
+  height: auto;
+}
+body main .mainSec .telephoneMain .bottomSec .firstMessageBox .messageBox p {
+  max-width: 230px;
+  margin: 0px;
+}
+body main .mainSec .telephoneMain .bottomSec .secondMessageBox {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: end;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  right: 20px;
+  gap: 10px;
+}
+body main .mainSec .telephoneMain .bottomSec .secondMessageBox .imagesBox img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+body main .mainSec .telephoneMain .bottomSec .secondMessageBox .messageBox {
+  background-color: white;
+  padding: 10px;
+  color: black;
+  border-radius: 15px;
+  height: auto;
+  box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.075);
+}
+body main .mainSec .telephoneMain .bottomSec .secondMessageBox .messageBox p {
+  max-width: 220px;
+  margin: 0;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 10px;
+  gap: 10px;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .messageBox {
+  background-color: hsla(206, 7%, 79%, 0.493);
+  padding: 10px;
+  color: hsl(276, 55%, 52%);
+  border-radius: 15px;
+  height: auto;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .messageBox p {
+  max-width: 220px;
+  margin: 0;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .offerBox {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  color: white;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .offerBox .firstOffer, body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .offerBox .secondOffer {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  align-items: center;
+  background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  width: 250px;
+  height: 50px;
+  padding-left: 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 8px;
+  gap: 10px;
+  font-weight: 400;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .offerBox .firstOffer div, body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .offerBox .secondOffer div {
+  border: 2px solid rgb(158, 158, 158);
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .offerBox .firstOffer span, body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .offerBox .secondOffer span {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 75%;
+  font-size: 16px;
+  font-weight: 400;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .sendMsgBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-left: -10px;
+  margin-top: 15px;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .sendMsgBox input {
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 30px;
+  border: 0;
+  outline: 0;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .sendMsgBox .arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  position: relative;
+  left: 300px;
+}
+body main .mainSec .telephoneMain .bottomSec .thirdMessageBox .sendMsgBox .right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+body main .mainSec .textSec {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  width: 500px;
+  height: 250px;
+}
+body main .mainSec .textSec h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: black;
+}
+@media (max-width: 960px) {
+  body main .mainSec .textSec h1 {
+    text-align: center;
+    width: 100%;
+  }
+}
+body main .mainSec .textSec p {
+  font-weight: 400;
+  font-size: 16px;
+  color: hsl(270, 7%, 64%);
+  max-width: 450px;
+  line-height: 28px;
+}
+@media (max-width: 960px) {
+  body main .mainSec .textSec p {
+    text-align: center;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}/*# sourceMappingURL=styles.css.map */
